@@ -171,7 +171,7 @@ function App() {
       })
       .then((res) => setSellerOrders(res.data))
       .catch((err) => console.log(err));
-  };
+  }, [token]);
 
   useEffect(() => {
     if (sellerMode && token) { fetchSellerOrders(); }
