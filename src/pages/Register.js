@@ -8,7 +8,7 @@ function Register({ switchToLogin }) {
 
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post("https://myshop-backend-vghn.onrender.com/api/auth/register", {
         name,
         email,
         password,
