@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import "./App.css";
 import Login from "./pages/Login";
@@ -164,7 +164,7 @@ function App() {
     window.location.reload();
   };
 
-  const fetchSellerOrders = () => {
+  const fetchSellerOrders = useCallback(() => {
     axios
       .get(`${API}/orders/seller`, {
         headers: { Authorization: token },
@@ -174,7 +174,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (sellerMode && token) fetchSellerOrders();
+    if (sellerMode && token) { fetchSellerOrders(); }
   }, [sellerMode, token]);
 
   const deleteProduct = (productId) => {
