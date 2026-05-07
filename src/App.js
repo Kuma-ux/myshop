@@ -175,7 +175,7 @@ function App() {
 
   useEffect(() => {
     if (sellerMode && token) { fetchSellerOrders(); }
-  }, [sellerMode, token]);
+  }, [sellerMode, token, fetchSellerOrders]);
 
   const deleteProduct = (productId) => {
     axios
