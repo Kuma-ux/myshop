@@ -38,7 +38,7 @@ function App() {
   // Safe parsing of localStorage
   const user = JSON.parse(localStorage.getItem("user") || "null");
   const token = localStorage.getItem("token");
-  const API = "https://myshop-backend-vghn.onrender.com";
+  const API = "https://api.myshop24.site/api";
 
   const filteredProducts = products.filter((p) =>
     p.name.toLowerCase().includes(searchQuery.toLowerCase())
